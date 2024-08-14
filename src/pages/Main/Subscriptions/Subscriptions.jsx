@@ -14,7 +14,7 @@ const Subscriptions = () => {
   return (
     <div className="space-y-[24px]">
       <AddNewButton text={"Add New Subscription"} />
-      <div className="grid grid-cols-3 xl:grid-cols-4 gap-10">
+      <div className="grid grid-cols-4 xl:grid-cols-5 gap-8">
         <SubscriptionCard data={{ title: "Basic" }} setModalData={showModal} />
         <SubscriptionCard
           data={{ title: "Standard" }}
@@ -47,7 +47,10 @@ const Subscriptions = () => {
           <div className="flex gap-6 justify-end py-3">
             <Button
               onClick={() => setIsModalOpen(false)}
-              className="bg-white text-[#1F8D84] rounded-full w-[70px]"
+              style={{
+                border: "1px solid #0445E5"
+              }}
+              className="bg-white text-[#0445E5] rounded-full w-[70px]"
               type="default"
               size="large"
             >
@@ -55,7 +58,7 @@ const Subscriptions = () => {
             </Button>
             <Button
               // onClick={() => setIsModalOpen(true)}
-              style={{ background: "#1F8D84", color: "white" }}
+              style={{ background: "#0445E5", color: "white" }}
               className="rounded-full w-[70px]"
               type="default"
               size="large"

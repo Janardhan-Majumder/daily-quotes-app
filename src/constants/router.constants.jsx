@@ -1,4 +1,3 @@
-
 import { GrMoney } from "react-icons/gr";
 import { RiDashboardHorizontalFill, RiUserStarLine } from "react-icons/ri";
 import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
@@ -13,6 +12,14 @@ import { CiSettings } from "react-icons/ci";
 import Settings from "../pages/Settings/Settings";
 import MyProfile from "../pages/Profile/MyProfile";
 import EditMyProfile from "../pages/Profile/EditMyProfile";
+import TermsConditions from "../pages/Settings/TermsConditions";
+import EditTermsConditions from "../pages/Settings/EditTermsConditions";
+import EditPrivacyPolicy from "../pages/Settings/EditPrivacyPolicy";
+import PrivacyPolicy from "../pages/Settings/PrivacyPolicy";
+import AboutUs from "../pages/Settings/AboutUs";
+import EditAboutUs from "../pages/Settings/EditAboutUs";
+import EditSubscription from "../pages/Main/Subscriptions/EditSubscription";
+import AddSubscription from "../pages/Main/Subscriptions/AddSubscription";
 
 export const dashboardItems = [
   {
@@ -49,14 +56,14 @@ export const dashboardItems = [
     icon: FaRegChessQueen,
     element: <Subscriptions />,
   },
-  // {
-  //   path: "/subscriptions/edit/:id",
-  //   element: <EditSubscriptions />,
-  // },
-  // {
-  //   path: "/subscriptions/add-new",
-  //   element: <AddSubscription />,
-  // },
+  {
+    path: "/subscriptions/edit/:id",
+    element: <EditSubscription />,
+  },
+  {
+    path: "/subscriptions/add-new",
+    element: <AddSubscription />,
+  },
   {
     name: "Settings",
     path: "/settings",
@@ -71,28 +78,28 @@ export const dashboardItems = [
     path: "/settings/personal-information/edit",
     element: <EditMyProfile />,
   },
-  // {
-  //   path: "/settings/terms-conditions",
-  //   element: <TermsConditions />,
-  // },
-  // {
-  //   path: "/settings/terms-conditions/edit",
-  //   element: <EditTermsConditions />,
-  // },
-  // {
-  //   path: "/settings/privacy-policy",
-  //   element: <PrivacyPolicy />,
-  // },
-  // {
-  //   path: "/settings/privacy-policy/edit",
-  //   element: <EditPrivacyPolicy />,
-  // },
-  // {
-  //   path: "/settings/about-us",
-  //   element: <AboutUs />,
-  // },
-  // {
-  //   path: "/settings/about-us/edit",
-  //   element: <EditAboutUs />,
-  // },
+  {
+    path: "/settings/terms-conditions",
+    element: <TermsConditions />,
+  },
+  {
+    path: "/settings/terms-conditions/edit",
+    element: <EditTermsConditions />,
+  },
+  {
+    path: "/settings/privacy-policy",
+    element: <PrivacyPolicy />,
+  },
+  {
+    path: "/settings/privacy-policy/edit",
+    element: <EditPrivacyPolicy />,
+  },
+  {
+    path: "/settings/about-us",
+    element: <AboutUs />,
+  },
+  {
+    path: "/settings/about-us/edit",
+    element: <EditAboutUs />,
+  },
 ];

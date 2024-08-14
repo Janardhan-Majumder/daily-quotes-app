@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const PageHeading = ({ title, backPath }) => {
   const navigate = useNavigate();
   return (
-    <div className=" text-[#222222] flex items-center gap-1">
+    <div className=" text-primary flex items-center gap-1">
       <button
         className="outline-none px-2"
         onClick={() => navigate(backPath || "/settings")}

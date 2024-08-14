@@ -54,7 +54,7 @@ const AboutUs = () => {
         <Button
           onClick={() => navigate("edit")}
           style={{
-            backgroundColor: "#1F8D84",
+            backgroundColor: "#0445E5",
             color: "#fff",
           }}
           htmlType="submit"

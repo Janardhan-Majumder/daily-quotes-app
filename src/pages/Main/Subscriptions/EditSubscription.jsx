@@ -4,6 +4,7 @@ import { BiMinus, BiMinusCircle } from "react-icons/bi";
 import { FaChevronLeft } from "react-icons/fa6";
 import { TiPlusOutline } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
+import PageHeading from "../../../Components/PageHeading";
 
 const EditSubscription = () => {
   const navigate = useNavigate();
@@ -15,15 +16,7 @@ const EditSubscription = () => {
   };
   return (
     <div className="space-y-[24px]">
-      <div className=" text-[#1F8D84] flex items-center gap-1">
-        <button
-          className="outline-none px-2"
-          onClick={() => navigate("/subscriptions")}
-        >
-          <FaChevronLeft size={22} />
-        </button>
-        <h1 className="text-[24px] font-medium">Edit Subscription</h1>
-      </div>
+      <PageHeading title={"Edit Subcriptions"} backPath={"/subscriptions"}/>
       <Form
         name="basic"
         onFinish={onFinish}
@@ -44,7 +37,7 @@ const EditSubscription = () => {
             <Form.Item
               className=""
               label={
-                <span className="text-[18px] text-[#1F8D84]">Package Name</span>
+                <span className="text-[18px] text-primary">Package Name</span>
               }
               name="name"
               rules={[
@@ -57,17 +50,17 @@ const EditSubscription = () => {
               <Input
                 placeholder="Package name"
                 style={{
-                  border: "1px solid #98CBC6",
                   height: "56px",
                   background: "#FFFFFF",
                 }}
-                className="outline-none rounded-lg px-[16px] py-[12px] text-[#181414] mt-[8px] text-lg"
+                className="outline-none rounded-lg px-[16px] py-[12px] text-[#181414] mt-[8px] text-lg drop-shadow-md"
               />
             </Form.Item>
             <Form.Item
-              label={<span className="text-[18px] text-[#1F8D84]">Package Amount</span>}
+              label={
+                <span className="text-[18px] text-primary">Package Amount</span>
+              }
               name={"amount"}
-              
               rules={[
                 {
                   required: true,
@@ -78,17 +71,18 @@ const EditSubscription = () => {
               <Input
                 placeholder="Package amount"
                 style={{
-                  border: "1px solid #98CBC6",
                   height: "56px",
                   background: "#FFFFFF",
                 }}
-                className="outline-none rounded-lg px-[16px] py-[12px] text-[#181414] mt-[8px] text-lg shadow-sm"
+                className="outline-none rounded-lg px-[16px] py-[12px] text-[#181414] mt-[8px] text-lg drop-shadow-md"
               />
             </Form.Item>
             <Form.Item
-            label={ <span className="text-[18px] text-[#1F8D84]">
-              Package Expiration
-            </span>}
+              label={
+                <span className="text-[18px] text-primary">
+                  Package Expiration
+                </span>
+              }
               name={"expiration"}
               rules={[
                 {
@@ -100,16 +94,15 @@ const EditSubscription = () => {
               <Input
                 placeholder="Package expiration"
                 style={{
-                  border: "1px solid #98CBC6",
                   height: "56px",
                   background: "#FFFFFF",
                 }}
-                className="outline-none rounded-lg px-[16px] py-[12px] text-[#181414] mt-[8px] text-lg shadow-sm"
+                className="outline-none rounded-lg px-[16px] py-[12px] text-[#181414] mt-[8px] text-lg drop-shadow-md"
               />
             </Form.Item>
           </div>
           <div className="col-span-2 border-t border-[#1f8d848e] mt-3 py-[20px]">
-            <p className="text-[18px] text-[#1F8D84] mb-[18px]">
+            <p className="text-[18px] text-primary mb-[18px]">
               Package Features
             </p>
             <Form.List name="features">
@@ -128,11 +121,10 @@ const EditSubscription = () => {
                         <Input
                           placeholder="Enter new feature"
                           style={{
-                            border: "1px solid #98CBC6",
                             height: "56px",
                             background: "#FFFFFF",
                           }}
-                          className="outline-none rounded-lg px-[16px] py-[12px] text-[#181414] text-lg shadow-sm"
+                          className="outline-none rounded-lg px-[16px] py-[12px] text-[#181414] mt-[8px] text-lg drop-shadow-md"
                         />
                       </Form.Item>
                       <button className="border-2 border-[#ee1d24ab] rounded-full p-0.5 text-[#EE1D23]">
@@ -145,6 +137,7 @@ const EditSubscription = () => {
                       type="dashed"
                       onClick={() => add()}
                       icon={<TiPlusOutline />}
+                      size="large"
                     >
                       Add feature field
                     </Button>
@@ -154,19 +147,32 @@ const EditSubscription = () => {
             </Form.List>
           </div>
         </div>
-        <Button
-          style={{
-            backgroundColor: "#1F8D84",
-            size: "18px",
-            height: "56px",
-            color: "#ffff",
-          }}
-          size="large"
-          htmlType="submit"
-          className="w-full h-[56px] px-2 font-medium rounded-lg "
-        >
-          Upadate
-        </Button>
+        <div className="flex gap-8 pt-4">
+          <Button
+            style={{
+              size: "18px",
+              height: "56px",
+            }}
+            size="large"
+            htmlType="button"
+            className="w-full h-[56px] px-2 font-medium rounded-lg "
+          >
+            Delete
+          </Button>
+          <Button
+            style={{
+              backgroundColor: "#0445E5",
+              size: "18px",
+              height: "56px",
+              color: "#ffff",
+            }}
+            size="large"
+            htmlType="submit"
+            className="w-full h-[56px] px-2 font-medium rounded-lg "
+          >
+            Upadate
+          </Button>
+        </div>
       </Form>
     </div>
   );

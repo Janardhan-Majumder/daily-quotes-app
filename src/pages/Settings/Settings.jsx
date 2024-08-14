@@ -121,7 +121,6 @@ const Settings = () => {
                 ]}
               >
                 <Input.Password
-                
                   prefix={<MdLockOutline className="mr-2" />}
                   style={{
                     border: "1px solid #0445E5",
@@ -189,7 +188,7 @@ const Settings = () => {
                   color: "#0445E5",
                 }}
                 type="link"
-                className="text-[16px] -mt-3 mb-3 outline-none font-medium" 
+                className="text-[16px] -mt-3 mb-3 outline-none font-medium"
                 onClick={() => setModalTitle("Forget Password")}
               >
                 Forget Password?
@@ -245,7 +244,8 @@ const Settings = () => {
                 <Input
                   prefix={<MdOutlineEmail className="mr-2" />}
                   style={{
-                    backgroundColor: "#E9F4F3",
+                    border: "1px solid #0445E5",
+                    backgroundColor: "#E6ECFC",
                   }}
                   className="p-4 rounded-lg h-[56px]  placeholder:text-[#999999]"
                   placeholder="Enter your email"
@@ -254,7 +254,7 @@ const Settings = () => {
               <Form.Item>
                 <Button
                   style={{
-                    backgroundColor: "#1F8D84",
+                    backgroundColor: "#0445E5",
                     color: "#fff",
                     height: "56 px",
                   }}
@@ -295,7 +295,7 @@ const Settings = () => {
                     width: "40px",
                     margin: "auto",
                     // background: "#FFF3E6",
-                    border: "1px solid #1F8D84",
+                    border: "1px solid #0445E5",
                     marginRight: "10px",
                     outline: "none",
                     borderRadius: "8px",
@@ -309,7 +309,7 @@ const Settings = () => {
                 <p>Didn’t receive the code?</p>
                 <button
                   style={{
-                    color: "#1F8D84",
+                    color: "#0445E5",
                   }}
                   type="button"
                   className="text-[16px] outline-none text-[#1F8D84] hover:text-[#1f6e8d]"
@@ -321,7 +321,7 @@ const Settings = () => {
               <Form.Item>
                 <Button
                   style={{
-                    backgroundColor: "#1F8D84",
+                    backgroundColor: "#0445E5",
                     color: "#fff",
                     height: "56 px",
                   }}
@@ -371,7 +371,8 @@ const Settings = () => {
                 <Input.Password
                   prefix={<MdLockOutline className="mr-2" />}
                   style={{
-                    backgroundColor: "#E9F4F3",
+                    backgroundColor: "#E6ECFC",
+                    border: "1px solid #0445E5",
                   }}
                   className="rounded-lg h-[56px]  placeholder:text-[#999999]"
                   placeholder="Set new password"
@@ -403,7 +404,8 @@ const Settings = () => {
                 <Input.Password
                   prefix={<MdLockOutline className="mr-2" />}
                   style={{
-                    backgroundColor: "#E9F4F3",
+                    backgroundColor: "#E6ECFC",
+                    border: "1px solid #0445E5",
                   }}
                   className="p-4 rounded-lg h-[56px]  placeholder:text-[#999999]"
                   placeholder="Re-enter your password"
@@ -412,7 +414,7 @@ const Settings = () => {
               <Form.Item>
                 <Button
                   style={{
-                    backgroundColor: "#1F8D84",
+                    backgroundColor: "#0445E5",
                     color: "#fff",
                   }}
                   htmlType="submit"

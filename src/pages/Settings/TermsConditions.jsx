@@ -15,7 +15,7 @@ const TermsConditions = () => {
             Egestas duis id nisl sed ante congue scelerisque. Eleifend facilisis
             aliquet tempus morbi leo sagittis. Pellentesque odio amet turpis
             habitant. Imperdiet tincidunt nisl consectetur hendrerit accumsan
-            vehicula imperdiet mattis. Neque a vitae diam pharetra duis
+            vehicula imperdiet mattis. d's Neque a vitae diam pharetra duis
             habitasse convallis luctus pulvinar. Pharetra nunc morbi elementum
             nisl magnis convallis arcu enim tortor. Cursus a sed tortor enim mi
             imperdiet massa donec mauris. Sem morbi morbi posuere faucibus. Cras
@@ -55,7 +55,7 @@ const TermsConditions = () => {
         <Button
           onClick={() => navigate("edit")}
           style={{
-            backgroundColor: "#1F8D84",
+            backgroundColor: "#0445E5",
             color: "#fff",
           }}
           htmlType="submit"
