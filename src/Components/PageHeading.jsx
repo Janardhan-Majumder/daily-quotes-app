@@ -8,7 +8,7 @@ const PageHeading = ({ title, backPath }) => {
     <div className=" text-primary flex items-center gap-1">
       <button
         className="outline-none px-2"
-        onClick={() => navigate(backPath || "/settings")}
+        onClick={() => navigate(backPath || -1)}
       >
         <FaArrowLeft size={22} />
       </button>

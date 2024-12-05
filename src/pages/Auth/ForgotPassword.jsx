@@ -1,78 +1,83 @@
+import { Button, Checkbox, Input } from "antd";
+import Form from "antd/es/form/Form";
 import React from "react";
-import { Button, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
-import { RxArrowLeft } from "react-icons/rx";
+import { useTranslation } from "react-i18next";
+import logoImg from "../../assets/images/logo.png";
+import { RxLockClosed } from "react-icons/rx";
+import { FiMail } from "react-icons/fi";
 
 const ForgotPassword = () => {
+  const [t] = useTranslation("global");
   const navigate = useNavigate();
-  const onFinish = (values) => {
-    // console.log("Success:", values);
-    navigate("/auth/verify-email");
+  const onFinish = async (values) => {
+    console.log(values);
   };
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
-
+  // const mailMessage =
   return (
-    <div className=" w-[451px] bg-playground py-[64px] px-[44px] rounded-2xl space-y-[24px]">
-      <div className="flex justify-center items-center gap-1">
-        <button onClick={() => navigate("/auth/sign-in")}>
-          <RxArrowLeft size={22} />
-        </button>
-        <h5 className="text-2xl font-medium">Forgot Password</h5>
+    <div className="bg-white rounded-[16px] max-w-xl w-full relative">
+      <div className="absolute -top-16 w-full flex justify-center">
+        <div className="rounded-full bg-white w-36 h-36 p-9 border shadow-sm">
+          <img className="" src={logoImg} alt="logo" />
+        </div>
       </div>
-      <p className="text-center text-[#464343]">
-        Please enter your email address to reset your password.
-      </p>
-      <Form
-        name="basic"
-        layout="vertical"
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-        className="w-full space-y-[24px]"
-      >
-        <Form.Item
-          className={"text-start"}
-          name="email"
-          rules={[
-            {
-              type: "email",
-              required: true,
-              message: "Please input your assword!",
-            },
-          ]}
+      <div className="w-full px-14 pb-8 pt-[100px]">
+        <div className="pb-6 text-center space-y-3">
+          <h1 className="text-3xl font-semibold ">{t("forgot.heading")}</h1>
+          <p className="text-light-gray">{t("forgot.des")}</p>
+        </div>
+        <Form
+          name="normal_login"
+          layout="vertical"
+          requiredMark={false}
+          initialValues={{}}
+          onFinish={onFinish}
+          className="space-y-[24px]"
         >
-          <Input
-            // onChange={handleChange}
-            placeholder="Email"
+          <Form.Item
+            label={<span className="font-medium">{t("login.mail.title")}</span>}
             name="email"
-            style={{
-              border: "1px solid #0445e5",
-              height: "56px",
-              background: "#E9F4F3",
-              outline: "none",
-              color: "#646262",
-              padding: "16px 12px",
-              placeholder: "black",
-            }}
-          />
-        </Form.Item>
-        <Form.Item>
-          <Button
-            style={{
-              backgroundColor: "#0445e5",
-              size: "18px",
-              height: "56px",
-              color: "#ffff",
-            }}
-            htmlType="submit"
-            className="w-full h-[56px] px-2 font-medium rounded-lg mt-[10px]"
+            // name={['user', 'emial']}
+            rules={[
+              {
+                required: true,
+                type: "email",
+                message: t("login.mail.message"),
+              },
+            ]}
           >
-            Send OTP
-          </Button>
-        </Form.Item>
-      </Form>
+            <Input
+              prefix={
+                <div className="border-r pr-1 border-gray-200">
+                  <FiMail size={18} />
+                </div>
+              }
+              size="large"
+              placeholder={t("login.mail.placeholder")}
+            />
+          </Form.Item>
+          <Form.Item>
+            <Button
+              size="large"
+              type="primary"
+              htmlType="submit"
+              className="w-full mt-2"
+            >
+              {t("forgot.btn")}
+            </Button>
+          </Form.Item>
+          <div className="flex justify-center items-center pt-4">
+            <Button
+              onClick={() => navigate("/auth")}
+              type="link"
+              htmlType="button"
+              className="text-base font-medium hover:text text-primary pb-5"
+            >
+              {t("forgot.back")}
+            </Button>
+          </div>
+        </Form>
+      </div>
     </div>
   );
 };

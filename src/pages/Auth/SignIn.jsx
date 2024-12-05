@@ -1,105 +1,104 @@
 import { Button, Checkbox, Input } from "antd";
 import Form from "antd/es/form/Form";
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { IconLock } from "@tabler/icons-react";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import logoImg from "../../assets/images/logo.png";
+import { RxLockClosed } from "react-icons/rx";
+import { FiMail } from "react-icons/fi";
 
 const SignIn = () => {
+  const [t] = useTranslation("global");
   const navigate = useNavigate();
   const onFinish = async (values) => {
     console.log(values);
   };
+  // const mailMessage =
   return (
-    <div className="bg-playground w-[451px] py-[64px] px-[44px] rounded-[16px]">
-      <div className="pb-[30px]">
-        <h1 className="text-[24px] text-center font-medium ">Sign In</h1>
-      </div>
-      <Form
-        name="normal_login"
-        layout="vertical"
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={onFinish}
-        className="space-y-[24px]"
-      >
-        <Form.Item
-          className="text-start"
-          name="username"
-          rules={[
-            {
-              required: true,
-              message: "Please input your user name!",
-            },
-          ]}
-        >
-          <Input
-            // onChange={handleChange}
-            placeholder="User name"
-            style={{
-              border: "1px solid #0445E5",
-              height: "56px",
-              background: "#E6ECFC",
-              color: "#646262",
-              padding: "16px 12px",
-              outline: "none",
-            }}
-          />
-        </Form.Item>
-        <Form.Item
-          className="text-start pt-2"
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: "Please input your password!",
-            },
-          ]}
-        >
-          <Input.Password
-            // onChange={handleChange}
-            placeholder="Password"
-            name="password"
-            style={{
-              border: "1px solid #0445E5",
-              height: "56px",
-              background: "#E6ECFC",
-              outline: "none",
-              color: "#646262",
-              padding: "16px 12px",
-            }}
-          />
-        </Form.Item>
-        <div className="flex justify-between items-center">
-          <Form.Item name="remember" valuePropName="checked">
-            <Checkbox className="text-base font-medium text-primary">
-              Remember me
-            </Checkbox>
-          </Form.Item>
-          <Button
-            style={{ color: "#0445e5" }}
-            onClick={() => navigate("/auth/forgot-password")}
-            type="link"
-            className="text-base font-medium hover:text text-primary pb-5"
-          >
-            Forget password?
-          </Button>
+    <div className="bg-white rounded-[16px] max-w-xl w-full relative">
+      <div className="absolute -top-16 w-full flex justify-center">
+        <div className="rounded-full bg-white w-36 h-36 p-9 border shadow-sm">
+          <img className="" src={logoImg} alt="logo" />
         </div>
-        <Form.Item>
-          <Button
-            style={{
-              backgroundColor: "#0445E5",
-              size: "18px",
-              height: "56px",
-              color: "#ffff",
-            }}
-            htmlType="submit"
-            className="w-full h-[56px] px-2 font-medium rounded-lg "
+      </div>
+      <div className="w-full px-14 pb-8 pt-[100px]">
+        <div className="pb-6 text-center space-y-3">
+          <h1 className="text-3xl font-semibold ">{t("login.heading")}</h1>
+          <p className="text-light-gray">{t("login.des")}</p>
+        </div>
+        <Form
+          name="normal_login"
+          layout="vertical"
+          requiredMark={false}
+          initialValues={{}}
+          onFinish={onFinish}
+          className="space-y-[24px]"
+        >
+          <Form.Item
+            label={<span className="font-medium">{t("login.mail.title")}</span>}
+            name="email"
+            // name={['user', 'emial']}
+            rules={[
+              {
+                required: true,
+                type: "email",
+                message: t("login.mail.message"),
+              },
+            ]}
           >
-            Sign In
-          </Button>
-        </Form.Item>
-      </Form>
+            <Input
+              prefix={
+                <div className="border-r pr-1 border-gray-200">
+                  <FiMail size={18} />
+                </div>
+              }
+              size="large"
+              placeholder={t("login.mail.placeholder")}
+            />
+          </Form.Item>
+          <Form.Item
+            label={<span className="font-medium">{t("login.pass.title")}</span>}
+            name="password"
+            rules={[
+              {
+                required: true,
+                message: t("login.pass.message"),
+              },
+            ]}
+          >
+            <Input.Password
+              prefix={
+                <div className="border-r pr-1 border-gray-200">
+                  <RxLockClosed size={18} />
+                </div>
+              }
+              size="large"
+              placeholder={t("login.pass.placeholder")}
+              name="password"
+            />
+          </Form.Item>
+          <Form.Item>
+            <Button
+              size="large"
+              type="primary"
+              htmlType="submit"
+              className="w-full"
+            >
+              {t("login.btn")}
+            </Button>
+          </Form.Item>
+          <div className="flex justify-center items-center pt-4">
+            <Button
+              onClick={() => navigate("/auth/forgot-password")}
+              type="link"
+              htmlType="button"
+              className="text-base font-medium hover:text text-primary pb-5"
+            >
+              {t("login.forgot")}
+            </Button>
+          </div>
+        </Form>
+      </div>
     </div>
   );
 };

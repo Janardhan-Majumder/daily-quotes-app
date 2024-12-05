@@ -1,13 +1,9 @@
-import { GrMoney } from "react-icons/gr";
+
 import { RiDashboardHorizontalFill, RiUserStarLine } from "react-icons/ri";
 import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
 import Notifications from "../pages/Main/Notifications/Notifications";
-import Earnings from "../../src/pages/Main/Earnings/Earnings";
 import Users from "../pages/Main/Users/Users";
 import { LuUsers2 } from "react-icons/lu";
-import { FaRegChessQueen } from "react-icons/fa6";
-import Subscriptions from "../pages/Main/Subscriptions/Subscriptions";
-import Subscribers from "../pages/Main/Subscribers/Subscribers";
 import { CiSettings } from "react-icons/ci";
 import Settings from "../pages/Settings/Settings";
 import MyProfile from "../pages/Profile/MyProfile";
@@ -18,8 +14,6 @@ import EditPrivacyPolicy from "../pages/Settings/EditPrivacyPolicy";
 import PrivacyPolicy from "../pages/Settings/PrivacyPolicy";
 import AboutUs from "../pages/Settings/AboutUs";
 import EditAboutUs from "../pages/Settings/EditAboutUs";
-import EditSubscription from "../pages/Main/Subscriptions/EditSubscription";
-import AddSubscription from "../pages/Main/Subscriptions/AddSubscription";
 
 export const dashboardItems = [
   {
@@ -33,36 +27,10 @@ export const dashboardItems = [
     element: <Notifications />,
   },
   {
-    name: "Earnings",
-    path: "/earnings",
-    icon: GrMoney,
-    element: <Earnings />,
-  },
-  {
     name: "Users",
     path: "/users",
     icon: LuUsers2,
     element: <Users />,
-  },
-  {
-    name: "Subscribers",
-    path: "/subscribers",
-    icon: RiUserStarLine,
-    element: <Subscribers />,
-  },
-  {
-    name: "Subscription",
-    path: "/subscriptions",
-    icon: FaRegChessQueen,
-    element: <Subscriptions />,
-  },
-  {
-    path: "/subscriptions/edit/:id",
-    element: <EditSubscription />,
-  },
-  {
-    path: "/subscriptions/add-new",
-    element: <AddSubscription />,
   },
   {
     name: "Settings",
@@ -102,4 +70,5 @@ export const dashboardItems = [
     path: "/settings/about-us/edit",
     element: <EditAboutUs />,
   },
+
 ];

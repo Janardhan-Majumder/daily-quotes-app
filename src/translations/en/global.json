@@ -1,0 +1,51 @@
+{
+  "root_loader": {
+    "text": "From Here to Anywhere, We Deliver."
+  },
+
+  "login": {
+    "heading": "Sign In",
+    "des": "Please sign in to your account.",
+    "mail": {
+      "title": "Email",
+      "placeholder": "Enter your email address",
+      "message": "Input a valid email!"
+    },
+    "pass": {
+      "title": "Password",
+      "placeholder": "Enter your password",
+      "message": "Input your password!"
+    },
+    "btn": "Login",
+    "forgot": "Forgot Password?"
+  },
+
+  "forgot": {
+    "heading": "Forgot Password",
+    "des": "Nothing to worry about, it happens with best of us. Enter your email below. A reset link will be sent to your Email address.",
+    "btn": "Submit",
+    "back": "Back to Sign In"
+  },
+  "sidebar": {
+    "heading": "Bienvenue",
+    "subHeading": "Main Menu",
+    "items": {
+      "0": "Dashboard",
+      "1": "Clients",
+      "2": "Delivery Personnel's",
+      "3": "City- wise Delivery",
+      "4": "Route Planning",
+      "5": "Daily Delivery Report",
+      "6": "Notification"
+    },
+    "logout": "Log Out",
+    "setting": "Account & Setting",
+    "password": "Change Password"
+  },
+  "greeting": {
+    "morning": "Good Morning",
+    "afternoon": "Good Afternoon",
+    "evening": "Good Evening"
+  },
+  "search-placeholder": "Search here..."
+}

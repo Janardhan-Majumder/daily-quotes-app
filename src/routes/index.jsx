@@ -8,6 +8,7 @@ import ResetPassword from "../pages/Auth/ResetPassword";
 import { routesGenerators } from "../utils/routesGenerators";
 import { dashboardItems } from "../constants/router.constants";
 
+// console.log(routesGenerators(dashboardItems))
 const router = createBrowserRouter([
   {
     path: "/",

@@ -33,10 +33,6 @@ const Notifications = () => {
             style={{ cursor: "pointer" }}
             className={`text-primary bg-playground w-[40px] h-[40px] rounded-lg p-2 shadow-sm transition-all`}
           />
-          <div className="space-y-[8px]">
-            <h6 className="text-[#181414] font-semibold" >You have received $500 from John Doe</h6>
-            <small className="text-[12px] text-lightgreen">Fri, 12:30pm</small>
-          </div>
         </div>
       </div>
     </div>

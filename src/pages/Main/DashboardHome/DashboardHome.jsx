@@ -1,6 +1,5 @@
 import React from "react";
 import DashboardChart from "../../../Components/DashboardCahrt";
-import DashboardHomeTable from "../../../Components/DashboardHomeTable";
 const items = [
   {
     label: (
@@ -91,7 +90,6 @@ const DashboardHome = () => {
         </div>
       </div>
       <DashboardChart />
-      <DashboardHomeTable />
     </div>
   );
 };

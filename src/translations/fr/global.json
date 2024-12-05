@@ -1,0 +1,51 @@
+{
+  "root_loader": {
+    "text": "D'ici à n'importe où, nous livrons."
+  },
+
+  "login": {
+    "heading": "Se connecter",
+    "des": "Veuillez vous connecter à votre compte.",
+    "mail": {
+      "title": "E-mail",
+      "placeholder": "Entrez votre adresse e-mail",
+      "message": "Saisissez un e-mail valide!"
+    },
+    "pass": {
+      "title": "Mot de passe",
+      "placeholder": "Entrez votre mot de passe",
+      "message": "Saisissez votre mot de passe!"
+    },
+    "btn": "Se connecter",
+    "forgot": "Mot de passe oublié ?"
+  },
+
+  "forgot": {
+    "heading": "Mot de Passe Oublié",
+    "des": "Pas de souci, cela arrive aux meilleurs d'entre nous. Entrez votre adresse email ci-dessous. Un lien de réinitialisation sera envoyé à votre adresse e-mail.",
+    "btn": "Soumettre",
+    "back": "Retour à la Connexion"
+  },
+  "sidebar": {
+    "heading": "Bienvenue",
+    "subHeading": "Menu Principal",
+    "items": {
+      "0": "Tableau de Bord",
+      "1": "Clients",
+      "2": "Livreurs",
+      "3": "Livraison par Ville",
+      "4": "Planification des Itinéraires",
+      "5": "Rapport de Livraison Quotidien",
+      "6": "Notification"
+    },
+    "logout": "Déconnexion",
+    "setting": "Compte & Paramètres",
+    "password": "Modifier le Mot de Passe"
+  },
+  "greeting": {
+    "morning": "Bonjour",
+    "afternoon": "Bon Après-midi",
+    "evening": "Bonsoir"
+  },
+  "search-placeholder": "Recherchez ici..."
+}

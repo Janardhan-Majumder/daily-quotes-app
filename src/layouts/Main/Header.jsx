@@ -1,38 +1,62 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Badge } from "antd";
-import { IoIosNotificationsOutline } from "react-icons/io";
+import { Input } from "antd";
 import profileImage from "../../assets/images/dash-profile.png";
+import { useTranslation } from "react-i18next";
+import { RiNotification2Line } from "react-icons/ri";
+import { FaAngleDown } from "react-icons/fa6";
+import { IoSearchOutline } from "react-icons/io5";
+import { MdOutlineKeyboardCommandKey } from "react-icons/md";
+import { GoDotFill } from "react-icons/go";
 
 const Header = () => {
+  const [t, i18n] = useTranslation("global");
   const navigate = useNavigate();
+  const onSearch = (value, _e, info) => console.log(info?.source, value);
   return (
-    <div className="w-full h-[88px] flex justify-between items-center gap-x-10 lg:gap-x-48">
-      <div className="text-start space-y-0.5 bg-grayground flex-1 py-[16px] px-[32px] rounded-2xl">
-        <p className="text-[24px] font-semibold text-primary">
-          {"Welcome,RJ"}
-        </p>
-        <p className="text-lightgreen">{"Have a nice day!"}</p>
-      </div>
-      <div className="flex gap-x-[41px]">
-        <div
+    <div className="w-full flex justify-between items-center gap-x-10 lg:gap-x-48 bg-white border-b pl-4 pr-6 py-3 shadow-sm">
+      <p className="text-[20px] font-semibold">{t("greeting.morning")}, John</p>
+
+      <div className="flex items-center gap-x-[41px]">
+        <Input
+          prefix={
+            <div className="text-light-gray border-r pr-1">
+              <IoSearchOutline size={20} />
+            </div>
+          }
+          placeholder={t("search-placeholder")}
+          // onSearch={onSearch}
+          style={{
+            height: 40,
+            width: 250,
+            border: "none",
+            background: "#f3f4f6",
+          }}
+          suffix={ <div className="flex items-center bg-gray-50 rounded drop-shadow-sm px-1.5 py-[2px]">
+            <MdOutlineKeyboardCommandKey  size={20} /> K
+          </div>}
+        />
+        <button
           onClick={(e) => navigate("/notifications")}
-          className="relative flex items-center "
+          className={`text-black hover:text-[#1f8d2e] rounded-full p-3 shadow-sm transition-all outline-none bg-gray-100 drop-shadow-sm relative`}
         >
-          <Badge style={{ backgroundColor: "#0445E5" }} count={1}>
-            <IoIosNotificationsOutline
-              style={{ cursor: "pointer" }}
-              className={`text-primary hover:text-[#1f8d2e] bg-grayground w-[48px] h-[48px] rounded-full p-2 shadow-sm transition-all`}
-            />
-          </Badge>
-        </div>
-        <div className="flex items-center gap-3">
+          <RiNotification2Line size={22} />
+          <GoDotFill size={14} className="absolute top-2 right-2 text-red-500" />
+        </button>
+        <div
+          onClick={(e) => navigate("/settings/personal-information")}
+          className="flex items-center gap-3 cursor-pointer"
+        >
           <div>
-            <img src={profileImage} alt="" className="rounded-full h-[48px] w-[48px]"  />
+            <img
+              src={profileImage}
+              alt=""
+              className="rounded-full h-[48px] w-[48px]"
+            />
           </div>
-          <div className="space-y-1 text-right">
-            <h5 className="text-[16px] font-medium">{"Jacob"}</h5>
-            <p className="text-xs text-lightgreen">{"Admin"}</p>
+          <div className="flex items-center gap-1.5">
+            <h5 className="text-[16px] font-medium">{"John D."}</h5>
+            <FaAngleDown size={13} className="pt-0.5" />
           </div>
         </div>
       </div>

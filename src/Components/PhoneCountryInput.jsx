@@ -3,7 +3,7 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 
 const PhoneCountryInput = ({ disabled }) => {
-  const [phoneNumber, setPhoneNumber] = useState("175454545");
+  const [phoneNumber, setPhoneNumber] = useState("");
   console.log(phoneNumber);
   return (
     <PhoneInput
@@ -15,7 +15,7 @@ const PhoneCountryInput = ({ disabled }) => {
       style={{
         marginTop: "12px",
       }}
-      defaultCountry="RU"
+      defaultCountry="US"
       value={phoneNumber?.toString()}
       onChange={setPhoneNumber}
     />
